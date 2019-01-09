@@ -1,0 +1,61 @@
+
+
+ 
+ 
+    
+<h2 class="lighting-titles"></img>Kitchen</h2>
+<div class="container dimmer-container">
+  
+  
+  
+  <h2>Kitchen Switches Grouping</h2>
+  <div class="row" ng-repeat="item in itemsInGroup('KitchenSwitches')"> 
+      <div>{{item.label}}</div>
+      <div>
+        <label class="myswitch">
+          <input type="checkbox" ng-checked="(itemValue(item.name)=='ON')" ng-click="sendCmd(item.name, (itemValue(item.name)=='OFF') ? 'ON':'OFF')">
+          <div class="myslider round"></div>
+        </label>
+      </div>
+    <hr />
+	</div>
+    
+
+          
+          
+          
+ 
+  
+  
+      <h2>Kitchen Dimmers Grouping</h2>
+  <div class="row" ng-repeat="item in itemsInGroup('KitchenDimmers')"> 
+      <div>{{item.label}}</div>
+      <div>
+        <label class="myswitch"></label>
+  <div ng-init="slider = {
+	value: 0,
+    options: {
+    	floor: 0,
+    	ceil: 100,
+    	step: 1
+	}
+};"></div>
+
+<rzslider
+	rz-slider-model="slider.value"
+        rz-slider-options="slider.options"
+  	ng-click="sendCmd('Heating_Comfort', slider.value)">
+</rzslider>
+  
+        
+    </div>
+  
+  
+  
+  
+  
+  
+
+
+
+
